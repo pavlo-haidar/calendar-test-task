@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.alert {
+  background-color: $light-blue;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+
+  .alertMessageWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .alertMessage {
+    font-size: 14px;
+    color: $dark-blue;
+    margin-bottom: 5px;
+    margin-top: 0;
+  }
+  
+  .alertAction {
+    color: $primary-blue;
+    font-size: 14px;
+    transition: .3s;
+    margin-left: 25px;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  } 
+}

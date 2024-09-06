@@ -1,0 +1,118 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  height: calc(100vh - 60px);
+  border: 1px solid $gray;
+  width: 100%;
+  padding: 15px;
+  border-radius: 20px;
+
+  .content {
+    padding: 5px 10px;
+  }
+
+  .headerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .eventName {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  
+  .headerButton {
+    color: $dark-blue;
+    font-size: 15px;
+    padding: 5px 27px;
+    border: 1px solid $primary-blue;
+    border-radius: 36px;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 40px;
+  
+    &:hover {
+      color: $white;
+      background-color: rgba($primary-blue, 0.4);
+    }
+  }
+}
+
+.detailsCard {
+  border: 1px solid $gray;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4.38px 4.38px 1.09px $dark-blue2;
+  margin-top: 20px;
+
+  .detailsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $gray;
+    padding-bottom: 20px;
+
+    .detailsHeaderBox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .detailsTitle {
+        color: $black;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .blueButton {
+        color: $primary-blue;
+        transform: .3s;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .devider {
+        border-right: 1px solid $gray;
+        height: 22px;
+      }
+
+      .copyButton {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .detailsContent {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .detailsContentJustify {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .detailsContentRow {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: $dark-gray;
+
+      .detailsContentRowPeople {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: wrap;
+        column-gap: 5px; 
+      }
+    }
+  }
+}

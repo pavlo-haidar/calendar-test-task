@@ -1,0 +1,42 @@
+@import '../../styles/variables.scss';
+
+.toggle {
+  width: 43px;
+  height: 23px;
+  background-color: $gray;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(calc(-50% - 9.5px), -50%);
+    width: 1px;
+    height: 9px;
+    background-color: $white;
+    opacity: 0.5;
+  }
+}
+
+.toggle.toggled {
+  background-color: $primary-blue;
+}
+
+.toggleHandle {
+  width: 19px;
+  height: 19px;
+  background-color: $white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 1.5px;
+  transition: transform 0.3s ease;
+}
+
+.toggle.toggled .toggleHandle {
+  transform: translateX(20px);
+}

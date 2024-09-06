@@ -1,0 +1,165 @@
+@import '../../styles/variables.scss';
+
+.dayWrapper {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+
+  .wrapper {
+    height: calc(100vh - 40px);
+    min-width: 500px;
+    width: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid $gray;
+    border-radius: 10px;
+
+    .dayBox {
+      display: flex;    
+
+      .hoursWrapper {
+        border-right: 1px solid $gray;
+        height: max-content;
+        text-align: center;
+        box-sizing: border-box;
+
+
+        .emptyBox {
+          width: 100px;
+          height: 50px;
+          position: sticky;
+          top: 0;
+          z-index: 2;
+          background-color: $white;
+          border-bottom: 1px solid $white;
+          border-radius: 1px solid $white;
+
+        }
+        
+        .hourBox {
+          width: 100px;
+          height: 70px;
+          color: $slate-blue;
+        }
+      }
+
+      .hourBoxContent {
+        position: relative;
+        height: 70px;
+        border-bottom: 1px solid $gray;
+
+        &::after {
+          content: '';
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          top: 50%;
+          background-color: $gray;
+          opacity: 0.5;
+        }
+      }
+
+      .hourContent {
+        position: relative;
+        width: 100%;
+
+
+        .hourContentTitle {
+          background-color: $white;
+          position: sticky;
+          z-index: 3;
+          top: 0;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 1px solid $gray;
+        }
+        
+        
+        .hourContentDay {
+          color: $slate-blue;
+          font-weight: 800; 
+        }
+        
+        .hourContentDayNumber {
+          color: $white;
+          background-color: $primary-blue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 25px;
+          height: 25px;
+          margin-left: 5px;
+          border-radius: 2px;
+        }
+
+        .line {
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          background-color: $primary-blue;
+          border: 0;
+          z-index: 2;
+        
+          .currentTime {
+            position: absolute;
+            left: -70px;
+            top: -10px;
+            color: $primary-blue;
+            font-weight: bold;
+            width: 50px;
+            background-color: $white;
+          }
+        }
+        
+        .line::before {
+          content: '';
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background-color: $primary-blue;
+          border-radius: 50%;
+          transform: translate(-100%, -50%);
+        }
+
+        .eventBox {
+          position: absolute;
+          left: -5px;
+          background-color: $primary-blue;
+          color: $white;
+          border-radius: 4px;
+          width: 95%;
+          cursor: pointer;
+          transition: .3s;
+          padding: 5px;
+        
+          &:hover {
+            opacity: .8;
+          }
+        }
+        
+        .pastEvent {
+          background-color: $lavender;
+          color: $purple;
+          border-left: 3px solid $purple;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        
+        .eventName {
+          font-size: 12px;
+          line-height: 16px;
+          font-weight: 800;
+          margin-bottom: 0;
+          margin-top: 0;
+        }
+        
+        .eventDuration {
+          font-size: 8px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}
